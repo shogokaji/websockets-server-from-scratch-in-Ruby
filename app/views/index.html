@@ -6,5 +6,17 @@
 </head>
 <body>
   <h1>Web Server is Running!</h1>
+  <script>
+    // WSサーバへ接続するためのクライアントを作成
+    const exampleSocket = new WebSocket("ws://localhost:2345");
+    // WSへ接続した時のコールバック
+    exampleSocket.onopen = (event) => {
+      exampleSocket.send("message from client");
+    };
+    // WSサーバからのメッセージを受信した時のコールバック
+    exampleSocket.onmessage = (event) => {
+      console.log(event.data);
+    }
+  </script>
 </body>
 </html>
