@@ -8,6 +8,7 @@
   <h1>Web Server is Running!</h1>
   <script>
     // WSサーバへ接続するためのクライアントを作成
+    // ここではローカルホストの2345番ポートにハンドシェイクリクエストを送信
     const exampleSocket = new WebSocket("ws://localhost:2345");
     // WSへ接続した時のコールバック
     exampleSocket.onopen = (event) => {
